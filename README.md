@@ -14,3 +14,7 @@ The below are some design choices that I made for this custom implementation of 
 1. The default hashmap capacity is set to 16 when it's intialized
 2. The hashmap will auto resize by doubling its size when the size reaches at least 70% of its capacity
 3. The hashmap only supports int type
+
+## Test cases
+
+Test cases can be found [here](https://github.com/johnnyleejy/hashmap/blob/master/HashMapTests.java)
