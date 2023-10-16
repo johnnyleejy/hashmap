@@ -17,7 +17,11 @@ public class HashMap {
         return key % this.capacity;
     }
 
-    // O(1). Worst case is O(n) when hashmap resizes.
+    /**
+     * Adds a key and value to the hashmap in O(1)
+     * @param key the key to add to the hashmap
+     * @param value the value associated to the key
+     */
     public void add(int key, int value) {
         int index = this.hashFunction(key);
         Node node = this.map[index];
@@ -47,7 +51,11 @@ public class HashMap {
         }
     }
 
-    // O(1)
+    /**
+     * Retrieves a value based on a specified key in O(1)
+     * @param key the key of the value to be retrieved
+     * @return the value of the key
+     */
     public Integer get(int key) {
         int index = this.hashFunction(key);
         Node node = this.map[index];
@@ -61,11 +69,15 @@ public class HashMap {
         return null;
     }
 
+    /**
+     * Returns the size of the hashmap
+     * @return the size of the hashmap
+     */
     public int getSize() {
         return this.size;
     }
 
-    public void resize() {
+    private void resize() {
         // Double current capacity
         int newCapacity = this.capacity * 2;
         Node[] newMap = new Node[newCapacity];
@@ -90,7 +102,11 @@ public class HashMap {
         this.map = newMap;
     }
 
-    // O(n) where n is capacity of hashmap
+    /**
+     * Returns and prints the hashmap values in ascending order in O(n)
+     * @param testMode this flag is used purely to save testing time
+     * @return the arraylist of values in ascending order
+     */
     public ArrayList<Integer> printAll(boolean testMode) {
         ArrayList<Integer> result = new ArrayList<>();
         for (int i = 0; i < this.capacity; i++) {
